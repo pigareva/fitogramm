@@ -12,6 +12,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-octicons": "^0.2.0",
     "reactstrap": "^6.3.0"
   },
   "scripts": {

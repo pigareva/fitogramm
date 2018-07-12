@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import * as moment from 'moment';
 import 'moment/locale/de';
+import { ClockIcon, LocationIcon, InfoIcon, PersonIcon } from 'react-octicons';
 import { Button, Container, Row, Col } from 'reactstrap';
 
 export default class Item extends React.Component {
@@ -31,7 +32,12 @@ export default class Item extends React.Component {
               <Col xs="6">
                 <Row>
                   <Col xs="12">
-                    {moment(this.props.classItem.startDateTime).format("dd DD MMM YYYY")}
+                    <div className="icon-box">
+                      <ClockIcon/>
+                    </div>
+                    <div className="text-box">
+                      {moment(this.props.classItem.startDateTime).format("dd DD MMM YYYY")}
+                    </div>
                   </Col>
                   {
                     this.props.classItem.bookingWindowStartHours &&
@@ -40,16 +46,31 @@ export default class Item extends React.Component {
                 </Row>
               </Col>
               <Col xs="6">
-                {this.props.classItem.eventGroup.name}
+                <div className="icon-box">
+                  <InfoIcon/>
+                </div>
+                <div className="text-box">
+                  {this.props.classItem.eventGroup.name}
+                </div>
               </Col>
             </Row>
             <Row>
               <Col xs="6">
-                {this.props.classItem.location.city}
+                <div className="icon-box">
+                  <LocationIcon/>
+                </div>
+                <div className="text-box">
+                  {this.props.classItem.location.city}
+                </div>
               </Col>
               <Col xs="6">
-                {this.props.classItem.trainers.map(trainer => <p
-                  key={trainer.id}>{trainer.name}</p>)}
+                <div className="icon-box">
+                  <PersonIcon/>
+                </div>
+                <div className="text-box">
+                  {this.props.classItem.trainers.map(trainer => <p
+                    key={trainer.id}>{trainer.name}</p>)}
+                </div>
               </Col>
             </Row>
             <div className="description-box" dangerouslySetInnerHTML={this.createMarkup()}>

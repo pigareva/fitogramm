@@ -28,6 +28,16 @@
     font-size: 11px;
 }
 
+.icon-box {
+    width: 20%;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.text-box {
+    display: table-cell;
+}
+
 .description-box {
     height: 50px;
     overflow: hidden;
