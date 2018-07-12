@@ -24,6 +24,10 @@
     font-weight: 700;
 }
 
+.row {
+    margin-bottom: 6px;
+}
+
 .info-box {
     font-size: 11px;
 }
@@ -36,6 +40,7 @@
 
 .text-box {
     display: table-cell;
+    margin-left: 3px;
 }
 
 .description-box {
