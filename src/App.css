@@ -1,28 +1,24 @@
-.App {
-  text-align: center;
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-bottom: solid 2px lightgray;
+    height: 200px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.item-box {
+    margin: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.image-box {
+    min-width: 40%;
+    background-size: cover;
 }
 
-.App-title {
-  font-size: 1.5em;
+.info-box {
+    font-size: 11px;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.booking-box {
+    font-size: 11px;
 }
