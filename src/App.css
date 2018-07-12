@@ -1,3 +1,7 @@
+.separator {
+    border: solid 2px darkcyan;
+}
+
 .item-container {
     display: flex;
     justify-content: space-between;
@@ -16,10 +20,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-weight: 700;
 }
 
 .info-box {
     font-size: 11px;
+}
+
+.description-box {
+    height: 50px;
+    overflow: hidden;
 }
 
 .booking-box {
