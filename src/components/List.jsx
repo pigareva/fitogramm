@@ -13,7 +13,6 @@ export default class List extends React.Component {
   componentDidMount() {
     fetch('https://api.fitogram.pro/providers/yogashop/events/public?from=2018%2F01%2F01')
       .then((res) => {
-        console.log('res', res);
         return res.json();
       })
       .then(
@@ -35,7 +34,7 @@ export default class List extends React.Component {
     return (
       <div className="container">
         <h1>Yogashop</h1>
-        <div></div>
+        <div className="separator"></div>
         <div className="list-container">
           {body}
         </div>
