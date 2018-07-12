@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'reactstrap';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 export default class Item extends React.Component {
   constructor(props) {
@@ -19,18 +19,38 @@ export default class Item extends React.Component {
         </div>
 
         <div className="item-box info-box">
-          <div className="time-box">
-            <p>{this.props.classItem.startDateTime}</p>
-            {
-              this.props.classItem.bookingWindowStartHours &&
-              <p>{this.props.classItem.bookingWindowStartHours}</p>
-            }
-          </div>
-          <div className="name-box">{this.props.classItem.eventGroup.name}</div>
-          <div className="location-box">{this.props.classItem.location.city}</div>
-          <div className="trainer-box">{this.props.classItem.trainers.map(trainer => <p
-            key={trainer.id}>{trainer.name}</p>)}</div>
-          <div className="description-box">{this.props.classItem.descriptions.map(description => description.text)}</div>
+          <Container>
+            <Row>
+              <Col xs="6">
+                <Row>
+                  <Col xs="12">
+                    {this.props.classItem.startDateTime}
+                  </Col>
+                  {
+                    this.props.classItem.bookingWindowStartHours &&
+                    <Col xs="12">{this.props.classItem.bookingWindowStartHours}</Col>
+                  }
+                </Row>
+              </Col>
+              <Col xs="6">
+                {this.props.classItem.eventGroup.name}
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="6">
+                {this.props.classItem.location.city}
+              </Col>
+              <Col xs="6">
+                {this.props.classItem.trainers.map(trainer => <p
+                  key={trainer.id}>{trainer.name}</p>)}
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="12">
+                <div className="description-box">{this.props.classItem.descriptions.map(description => description.text)}</div>
+              </Col>
+            </Row>
+          </Container>
         </div>
 
         <div className="item-box booking-box">
