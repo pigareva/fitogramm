@@ -8,11 +8,13 @@ export default class Item extends React.Component {
   }
 
   render() {
+    const backgroundStyle = {
+      backgroundImage: `url(${this.props.classItem.eventGroup.imageUrl})`
+    };
     return (
       <Media className="item-box">
         <Media left href="#">
-          <div>{this.props.classItem.name}</div>
-          <Media object data-src="holder.js/64x64" alt="Generic placeholder image"/>
+          <div style={ backgroundStyle }>{this.props.classItem.name}</div>
         </Media>
         <Media body>
           <div className="info-box">
@@ -23,7 +25,7 @@ export default class Item extends React.Component {
                 <p>{this.props.classItem.bookingWindowStartHours}</p>
               }
             </div>
-            <div className="name-box">{this.props.classItem.name}</div>
+            <div className="name-box">{this.props.classItem.eventGroup.name}</div>
             <div className="location-box">{this.props.classItem.location.city}</div>
             <div className="trainer-box">{this.props.classItem.trainers.map(trainer => <p key={trainer.id}>{trainer.name}</p>)}</div>
             <div className="description-box">{this.props.classItem.descriptions.map(description => <p key={description.id}>{description.text}</p>)}</div>
@@ -32,8 +34,6 @@ export default class Item extends React.Component {
             <Button color="warning">Zur Buchung</Button>
             <div className="description-box">{this.props.classItem.endDateTime}</div>
           </div>
-
-
         </Media>
       </Media>
     )
