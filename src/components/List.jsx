@@ -19,7 +19,6 @@ export default class List extends React.Component {
         (result) => {
           console.log('result', result);
           this.setState({ classes: result });
-          return result;
         },
         (error) => {
            // ToDo handle an error
@@ -29,7 +28,8 @@ export default class List extends React.Component {
 
   render() {
     // ToDo error handling
-    const body = this.state.classes.map(classItem => <Item classItem={classItem} key={classItem.id}/>);
+    const body = this.state.hasError ? 'balala' :
+      this.state.classes.map(classItem => <Item classItem={classItem} key={classItem.id}/>);
 
     return (
       <div className="container">

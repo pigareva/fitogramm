@@ -68,8 +68,7 @@ export default class Item extends React.Component {
                   <PersonIcon/>
                 </div>
                 <div className="text-box">
-                  {this.props.classItem.trainers.map(trainer => <p
-                    key={trainer.id}>{trainer.name}</p>)}
+                  {this.props.classItem.trainers.map(trainer => trainer.name)}
                 </div>
               </Col>
             </Row>
